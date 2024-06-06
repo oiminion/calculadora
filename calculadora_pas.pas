@@ -90,41 +90,39 @@ begin
 end;
 
 procedure TForm1.ButtonEqualClick(Sender: TObject);
+type
+  operands = array[0..100] of String;
 var
   funnyString: String;
   var c: Char;
+  var x: Integer;
   var i: Integer;
-  var firstOperand: Integer;
+  var firstOperand: String;
   var secondOperand: String;
-  var elemArray: Array[] of String;
+  var numbers: operands;
+  var oper: operands;
 begin
+  funnyString := Edit1.Text;
   i := 0;
-  {funnyString := Edit1.Text;
-  for c in funnyString do
-      if c = '*' then
-      begin
-        firstOperand := '';
-        secondOperand := '';
-        for i := (funnyString.Length - 1) downto 0 do
-            if(funnyString[i] = '*') then
-            begin
-              Edit1.Text := secondOperand;
-              break;
-            end;
-            secondOperand := secondOperand + funnyString[i];
-            Edit2.Text := funnyString[i] + Edit2.Text;
-      end;}
-  for c in funnyString do
+  firstOperand := '';
+  for x := 1 to funnyString.length + 1 do
   begin
-    if TCharacter.IsNumber(c) = false then
+    c := funnyString[x];
+    if (TCharacter.IsNumber(c) = False) or (x = funnyString.length + 1) then
     begin
-      arrayElem[i] = firstOperand;
+      numbers[i] := firstOperand;
+      oper[i] := c;
       i := i + 1;
-      firstOperand = '';
+      firstOperand := '';
+      continue;
     end;
-    firstOperand = c + firstOperand;
-  end;
+    firstOperand := firstOperand + c;
+  //begin
+  //     Edit2.Text := x + Edit2.Text;
+  //end;
 
+end;
+  Edit2.Text := numbers[1]
 
 end;
 
