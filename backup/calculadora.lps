@@ -22,7 +22,7 @@
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
         <TopLine Value="132"/>
-        <CursorPos X="32" Y="151"/>
+        <CursorPos Y="153"/>
         <UsageCount Value="31"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -163,12 +163,24 @@
     </RunParams>
   </ProjectSession>
   <Debugging>
+    <BreakPoints>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="calculadora_pas.pas"/>
+        <Line Value="153"/>
+      </Item>
+    </BreakPoints>
     <Watches>
       <Item>
         <Expression Value="L1"/>
       </Item>
       <Item>
         <Expression Value="number"/>
+      </Item>
+      <Item>
+        <Expression Value="P1"/>
       </Item>
     </Watches>
   </Debugging>
