@@ -5,7 +5,7 @@ unit calculadora_pas;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls, Character;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls, Character, contnrs, StrUtils;
 
 type
 
@@ -57,11 +57,49 @@ type
   public
 
   end;
+  OperatorClass = class
+    public
+      value: Char;
+      precedencia: Integer;
+      constructor create(v: Char);
+  end;
+
+
 
 var
   Form1: TForm1;
 
 implementation
+{$mode objfpc} // directive to be used for defining classes
+{$m+}
+constructor OperatorClass.create(v: Char);
+begin
+   value := v;
+   if (v = '+') or (v = '-') then
+   begin
+     precedencia := 3;
+   end;
+   if(v = '~') then
+   begin
+     precedencia := 6
+   end;
+   if(v = '^') then
+   begin
+       precedencia := 5
+   end;
+   if(v = '/') or (v = '*') then
+   begin
+       precedencia := 4
+   end;
+   if(v = '(') then
+   begin
+       precedencia := 1
+   end;
+   if(v = ')') then
+   begin
+       precedencia := 0
+   end;
+end;
 
 {$R *.lfm}
 
@@ -90,39 +128,36 @@ begin
 end;
 
 procedure TForm1.ButtonEqualClick(Sender: TObject);
-type
-  operands = array[0..100] of String;
 var
-  funnyString: String;
-  var c: Char;
-  var x: Integer;
-  var i: Integer;
-  var firstOperand: String;
-  var secondOperand: String;
-  var numbers: operands;
-  var oper: operands;
+   calc: String;
+   c: Char;
+   P1 : TObjectStack;
+   L1: String;
+   i : Integer;
+   number: String;
+   operador: OperatorClass;
 begin
-  funnyString := Edit1.Text;
-  i := 0;
-  firstOperand := '';
-  for x := 1 to funnyString.length + 1 do
+  calc := Edit1.Text;
+  L1 := '';
+  number := '';
+  P1 := TObjectStack.create();
+  for i := 1 to calc.length + 1 do
   begin
-    c := funnyString[x];
-    if (TCharacter.IsNumber(c) = False) or (x = funnyString.length + 1) then
+    c := calc[i];
+    if(IsNumber(c) = false) or (i = calc.length + 1) then
     begin
-      numbers[i] := firstOperand;
-      oper[i] = c;
-      i := i + 1;
-      firstOperand := '';
+      L1 := L1 + number;
+      number := '';
+      operador := OperatorClass.create(c);
+      P1.Push(operador);
       continue;
     end;
-    firstOperand := firstOperand + c;
-  //begin
-  //     Edit2.Text := x + Edit2.Text;
-  //end;
+  number := number + c;
+  end;
+  Edit2.Text := L1;
 
-end;
-  Edit2.Text := numbers[1]
+
+
 
 end;
 
