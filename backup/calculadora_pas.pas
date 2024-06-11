@@ -62,8 +62,8 @@ type
       value: Char;
       precedencia: Integer;
       constructor create(v: Char);
+      function ToString: AnsiString; override;
   end;
-
 
 
 var
@@ -100,6 +100,10 @@ begin
        precedencia := 0
    end;
 end;
+function OperatorClass.ToString(): AnsiString;
+begin
+     ToString := value;
+end;
 
 {$R *.lfm}
 
@@ -135,7 +139,9 @@ var
    L1: String;
    i : Integer;
    number: String;
-   operador: OperatorClass;
+   debugVar: String;
+   operador: TObject;
+   operadorAtual: OperatorClass;
 begin
   calc := Edit1.Text;
   L1 := '';
@@ -148,18 +154,25 @@ begin
     begin
       L1 := L1 + number;
       number := '';
-      operador := OperatorClass.create(c);
-      P1.Push(operador);
-      continue;
+      if(c = '+') or (c = '-') or (c = '*') or (c = '/') or (c = '^') or (c = '~') or (c = '(') or (c = ')') then
+      begin
+        operadorAtual := OperatorClass.create(c);
+           while(P1.Peek().ToString() <> '') do
+           begin
+                operador := P1.Pop();
+                if(operador.precedencia >= operadorAtual.precedencia) then
+                begin
+                  L1 = operadorAtual + L1;
+                end;
+           end;
+      end;
+        P1.Push(operador);
     end;
-  number := number + c;
+      number := number + c;
   end;
-  Edit2.Text := L1;
+  Edit2.Text := P1.Peek().ToString();
+  end;
 
-
-
-
-end;
 
 procedure TForm1.ButtonSinClick(Sender: TObject);
 begin
