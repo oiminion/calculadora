@@ -507,6 +507,13 @@ begin
       begin
         operadorAtual := OperatorClass.create(c);
         debugClass := OperatorClass(P1.Peek());
+        if((c = ')') and (P1.Peek() <> nil)) then
+        begin
+          while((P1.Peek() <> nil)  and (OperatorClass(P1.Peek()).value <> ')')) do
+          begin
+               L1 := L1 + ' ' + OperatorClass(P1.Pop()).value;
+          end;
+        end;
            if(debugClass <> nil) then
            begin;
                 operador := OperatorClass(P1.Peek());

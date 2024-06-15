@@ -12,7 +12,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="50"/>
+        <UsageCount Value="51"/>
       </Unit>
       <Unit>
         <Filename Value="calculadora_pas.pas"/>
@@ -21,10 +21,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="522"/>
-        <CursorPos X="10" Y="535"/>
+        <TopLine Value="535"/>
+        <CursorPos Y="549"/>
         <ComponentState Value="2"/>
-        <UsageCount Value="50"/>
+        <UsageCount Value="51"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -45,54 +45,6 @@
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="551" TopLine="537"/>
-      </Position>
-      <Position>
-        <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="553" Column="41" TopLine="537"/>
-      </Position>
-      <Position>
-        <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="551" TopLine="537"/>
-      </Position>
-      <Position>
-        <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="556" Column="65" TopLine="544"/>
-      </Position>
-      <Position>
-        <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="448" Column="9" TopLine="540"/>
-      </Position>
-      <Position>
-        <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="557" Column="80" TopLine="545"/>
-      </Position>
-      <Position>
-        <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="560" Column="20" TopLine="548"/>
-      </Position>
-      <Position>
-        <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="554" Column="44" TopLine="544"/>
-      </Position>
-      <Position>
-        <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="548" TopLine="538"/>
-      </Position>
-      <Position>
-        <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="546" TopLine="539"/>
-      </Position>
-      <Position>
-        <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="543" TopLine="539"/>
-      </Position>
-      <Position>
-        <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="544" TopLine="535"/>
-      </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
         <Caret Line="554" TopLine="544"/>
@@ -139,10 +91,6 @@
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="464" Column="70" TopLine="545"/>
-      </Position>
-      <Position>
-        <Filename Value="calculadora_pas.pas"/>
         <Caret Line="545" Column="36" TopLine="535"/>
       </Position>
       <Position>
@@ -165,6 +113,58 @@
         <Filename Value="calculadora_pas.pas"/>
         <Caret Line="510" TopLine="501"/>
       </Position>
+      <Position>
+        <Filename Value="calculadora_pas.pas"/>
+        <Caret Line="535" Column="10" TopLine="522"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora_pas.pas"/>
+        <Caret Line="510" TopLine="500"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora_pas.pas"/>
+        <Caret Line="534" Column="34" TopLine="527"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora_pas.pas"/>
+        <Caret Line="570" Column="29" TopLine="566"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora_pas.pas"/>
+        <Caret Line="510" Column="17" TopLine="504"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora_pas.pas"/>
+        <Caret Line="514" Column="32" TopLine="504"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora_pas.pas"/>
+        <Caret Line="516" Column="13" TopLine="507"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora_pas.pas"/>
+        <Caret Line="453" Column="5" TopLine="530"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora_pas.pas"/>
+        <Caret Line="574" Column="3" TopLine="557"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora_pas.pas"/>
+        <Caret Line="510" Column="13" TopLine="500"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora_pas.pas"/>
+        <Caret Line="514" TopLine="500"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora_pas.pas"/>
+        <Caret Line="512" Column="80" TopLine="500"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora_pas.pas"/>
+        <Caret Line="516" Column="9" TopLine="505"/>
+      </Position>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
@@ -172,11 +172,6 @@
         <Mode Name="default"/>
       </Modes>
     </RunParams>
-    <HistoryLists>
-      <List Name="WorkingDirectory" Type="File" Count="1"/>
-      <List Name="LaunchingApplication" Type="File" Count="1"/>
-      <List Name="CommandLineParameters" Count="1"/>
-    </HistoryLists>
   </ProjectSession>
   <Debugging>
     <BreakPoints>
@@ -185,7 +180,7 @@
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="calculadora_pas.pas"/>
-        <Line Value="510"/>
+        <Line Value="549"/>
       </Item>
     </BreakPoints>
     <Watches>
@@ -194,6 +189,9 @@
       </Item>
       <Item>
         <Expression Value="debugClass"/>
+      </Item>
+      <Item>
+        <Expression Value="c"/>
       </Item>
     </Watches>
   </Debugging>
