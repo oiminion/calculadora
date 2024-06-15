@@ -508,15 +508,21 @@ begin
         operadorAtual := OperatorClass.create(c);
         if((c = ')') and (P1.Peek() <> nil)) then
         begin
-          while((P1.Peek() <> nil)  and (OperatorClass(P1.Peek()).value <> ')')) do
+          while((P1.Peek() <> nil)  and (OperatorClass(P1.Peek()).value <> '(')) do
           begin
                L1 := L1 + ' ' + OperatorClass(P1.Pop()).value;
           end;
+          P1.Pop();
+          continue;
         end;
         debugClass := OperatorClass(P1.Peek());
            if(debugClass <> nil) then
            begin;
                 operador := OperatorClass(P1.Peek());
+                if(operadorAtual.value = '(') then
+                begin
+                  continue;
+                end;
                 if(operador.precedencia >= operadorAtual.precedencia) then
                 begin
                   if(operador.value <> ')') and (operador.value <> '(') then

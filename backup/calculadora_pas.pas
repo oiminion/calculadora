@@ -506,17 +506,24 @@ begin
       if(c = '+') or (c = '-') or (c = '*') or (c = '/') or (c = '^') or (c = '~') or (c = '(') or (c = ')') or (c = 's') or (c = 'c') or (c = 't') or (c = 'i') or (c = 'o') or (c = 'a') or (c = 'q') or (c = 'r') or (c = 'l') or (c = 'n') then
       begin
         operadorAtual := OperatorClass.create(c);
-        debugClass := OperatorClass(P1.Peek());
         if((c = ')') and (P1.Peek() <> nil)) then
         begin
-          while((P1.Peek() <> nil)  and (OperatorClass(P1.Peek()).value <> ')')) do
+          while((P1.Peek() <> nil)  and (OperatorClass(P1.Peek()).value <> '(')) do
           begin
                L1 := L1 + ' ' + OperatorClass(P1.Pop()).value;
           end;
+          P1.Pop();
+          continue;
         end;
+        debugClass := OperatorClass(P1.Peek());
            if(debugClass <> nil) then
            begin;
                 operador := OperatorClass(P1.Peek());
+                if(operadorAtual.value = '(') then
+                begin
+                  continue;
+
+                end;
                 if(operador.precedencia >= operadorAtual.precedencia) then
                 begin
                   if(operador.value <> ')') and (operador.value <> '(') then
