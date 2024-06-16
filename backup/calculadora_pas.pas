@@ -112,7 +112,7 @@ begin
    end;
    if((v = 's') or (v = 'c') or (v = 't') or (v = 'i') or (v = 'o') ) then
    begin
-       precedencia := 0
+       precedencia := 7
    end;
 end;
 function OperatorClass.ToString(): AnsiString;
@@ -578,9 +578,76 @@ begin
    arccos := t;
 end;
 
+function fatorial(a:string):string;
+var
+   x:double;
+    r:double;
+    t:string;
+begin
+   x := StrToFloat(a);
+     r := 0;
+     {$ASMMODE intel}
+     asm
+     finit
+     fld x
+     ftst
+     fstsw ax
+     sahf
+     je @exc
+     @ini:
+     fld x
+     ftst
+     fstsw ax
+     sahf
+     je @fim
+
+     fld1
+     fsub
+     fst x
+     ftst
+     fstsw ax
+     sahf
+     je @fim
+     fmul
+
+     jmp @ini
+     jmp @fim
+     @exc:
+     fld1
+     fst r
+     jmp @fin
+     @fim:
+     fstp r
+     fst r
+     @fin:
+     end;
+     t := FloatToStr(r);
+     fatorial := t;
+end;
+
+function oposto(a:string):string;
+var
+   x:double;
+    r:double;
+    t:string;
+begin
+   x := StrToFloat(a);
+   r := 0;
+
+   {$ASMMODE intel}
+   asm
+   finit
+   fld x
+   fchs
+   fst r
+   end;
+   t := FloatToStr(r);
+   oposto := t;
+end;
+
 function isOperator(c: Char): boolean;
 begin
-  if(c = '+') or (c = '-') or (c = '*') or (c = '/') or (c = '^') or (c = '~') or (c = '(') or (c = ')') or (c = '!') then
+  if(c = '+') or (c = '-') or (c = '*') or (c = '/') or (c = '^') or (c = '~') or (c = '(') or (c = ')') or (c = '!') or (c = '~') then
   begin
     isOperator := true;
   end else
@@ -636,6 +703,8 @@ var
    firstObject: String;
    secondObject: String;
    flagReading: boolean;
+   booleanTest: boolean;
+   booleanTest1: boolean;
 begin
   calc := Edit1.Text;
   L1 := '';
@@ -745,14 +814,16 @@ begin
   for i := 1 to L1.length + 1 do
   begin
     c := L1[i];
-    if((c = ' ') and (number <> '')) then
+    booleanTest := (number <> ' ') and (number <> '');
+    booleanTest1 := c = ' ';
+    if (number <> ' ') and (c = ' ') then
     begin
       numberOperator := NumberClass.create(number);
       P2.Push(numberOperator);
       number := '';
       continue;
     end;
-    if(IsOperator(c) or (c = 'r') or (c = 'q') or (c = 's') or (c = 'c') or (c = 't') or (c = 'i') or (c = 'o') or (c = 'a') or (c = 'q') or (c = 'r') or (c = 'l') or (c = 'n')) then
+    if(IsOperator(c) or (c = 'r') or (c = 'q') or (c = 's') or (c = 'c') or (c = 't') or (c = 'i') or (c = 'o') or (c = 'a') or (c = 'q') or (c = 'r') or (c = 'l') or (c = 'n') or (c = '~')) then
     begin
       firstObject := NumberClass(P2.Pop()).value;
       if(c = '+') or (c = '-') or (c = '*') or (c = '/') or (c = 'r') or (c = '^') then
@@ -776,6 +847,7 @@ begin
          'l': P2.Push(NumberClass.create(log(firstObject)));
          'n': P2.Push(NumberClass.create(ln(firstObject)));
          '!': P2.Push(NumberClass.create(fatorial(firstObject)));
+         '~': P2.Push(NumberClass.create(oposto(firstObject)));
 
       end;
       debugNumber := NumberClass(P2.Peek());
