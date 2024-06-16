@@ -75,9 +75,11 @@ type
 
 var
   Form1: TForm1;
+  GrausRadianos: boolean;
 
 const
   e = 2.718281828459045;
+  p = Pi;
 implementation
 {$mode objfpc} // directive to be used for defining classes
 {$m+}
@@ -143,19 +145,26 @@ begin
        19: falseValue := 'ln(';
        18: falseValue := 'log(';
        17: falseValue := '^-1';
-       24: falseValue := 'sin(';
-       23: falseValue := 'cos(';
-       22: falseValue := 'tan(';
        21: falseValue := 'sqr(';
        25: falseValue := 'e^';
        26: falseValue := '^';
        27: falseValue := '^2';
        28: falseValue := 'x^';
-
-
-
-
-
+  end;
+  if(CheckBox1.Checked) then
+  begin
+      case (TheButton.Tag) of
+           24: falseValue := 'sin^-1(';
+           23: falseValue := 'cos^-1(';
+           22: falseValue := 'tan^-1(';
+      end;
+  end else
+  begin
+    case (TheButton.Tag) of
+         24: falseValue := 'sin(';
+         23: falseValue := 'cos(';
+         22: falseValue := 'tan(';
+    end;
   end;
   if TheButton.tag < 10 then
   begin
@@ -163,6 +172,7 @@ begin
   end;
   Edit1.Text:= Edit1.Text + falseValue;
 end;
+
 function soma(a,b:string):string;
 var
   x :double;
@@ -392,9 +402,185 @@ begin
    raiz := t;
 end;
 
+function sen(a:string):string;
+var
+   x:double;
+    r:double;
+    t:string;
+begin
+   x := StrToFloat(a);
+     if(GrausRadianos = false) then
+     begin
+       x := x * (p/ 180);
+     end;
+     r := 0;
+   {$asmode intel}
+   asm
+      finit
+      fld x
+      fsin
+      fst r
+   end;
+   t := FloatToStr(r);
+   sen := t;
+end;
+
+function cos(a:string):string;
+var
+   x:double;
+    r:double;
+    t:string;
+begin
+   x := StrToFloat(a);
+     if(GrausRadianos = false) then
+     begin
+       x := x * (p/ 180);
+     end;
+     r := 0;
+   {$asmode intel}
+   asm
+      finit
+      fld x
+      fcos
+      fst r
+   end;
+   t := FloatToStr(r);
+   cos := t;
+end;
+
+function tg(a:string):string;
+var
+   x:double;
+    r:double;
+    t:string;
+begin
+   x := StrToFloat(a);
+     if(GrausRadianos = false) then
+     begin
+       x := x * (p/ 180);
+     end;
+     r := 0;
+   {$asmode intel}
+   asm
+      finit
+      fld x
+      fsincos
+      fxch
+      fdiv
+      fst r
+   end;
+   t := FloatToStr(r);
+   tg := t;
+end;
+
+function arcsen(a:string):string;
+var
+   x:double;
+    r:double;
+    t:string;
+begin
+   x := StrToFloat(a);
+     r := 0;
+   {$asmode intel}
+   asm
+      finit
+      fld x
+      fld1
+      fsub
+      fld1
+      fld x
+      fadd
+      fmul
+      fsqrt
+      fld x
+      fxch
+      fpatan
+      fst r
+   end;
+   if(GrausRadianos = false) then
+     begin
+       r := r * (180/ p);
+     end;
+   t := FloatToStr(r);
+   arcsen := t;
+end;
+
+function arctg(a:string):string;
+var
+   x:double;
+    r:double;
+    t:string;
+begin
+   x := StrToFloat(a);
+     r := 0;
+   {$asmode intel}
+   asm
+      finit
+      fld x
+      fld1
+      fpatan
+      fst r
+   end;
+   if(GrausRadianos = false) then
+     begin
+       r := r * (180/ p);
+     end;
+   t := FloatToStr(r);
+   arctg := t;
+end;
+
+function arccos(a:string):string;
+var
+   x:double;
+    r:double;
+    v:double;
+    t:string;
+begin
+   x := StrToFloat(a);
+   v := 0.00000000001;
+     r := 0;
+   {$ASMMODE intel}
+   asm
+      finit
+      fld x
+      ftst
+      fstsw ax
+      sahf
+      je @zer
+
+      @ini:
+
+      fld1
+      fsubr
+      fld x
+      fld1
+      fadd
+      fmul
+      fsqrt
+      fld x
+      fpatan
+
+      jmp @fim
+      @zer:
+
+      fld v
+      fstp x
+
+      jmp @ini
+      @fim:
+      fst r
+   end;
+   if(GrausRadianos = false) then
+     begin
+       r := r * (180/ p);
+     end;
+   t := FloatToStr(r);
+   arccos := t;
+end;
+
 function isOperator(c: Char): boolean;
 begin
-  if(c = '+') or (c = '-') or (c = '*') or (c = '/') or (c = '^') or (c = '~') or (c = '(') or (c = ')') then
+  if(c = '+') or (c = '-') or (c = '*') or (c = '/') or (c = '^') or (c = '~') or (c = '(') or (c = ')') or (c = '!') then
   begin
     isOperator := true;
   end else
@@ -423,7 +609,7 @@ begin
       newStr := newStr + ' ';
       while (i <= length(str)) and (str[i] = ' ') do
         inc(i);
-      dec(i); // Para corrigir a posição de i após o último espaço
+      dec(i);
     end;
     inc(i);
   end;
@@ -460,6 +646,8 @@ begin
   debugClass :=  OperatorClass(P1.Peek());
   midCalc := '';
   flagReading := false;
+  if RadioButton1.Checked then GrausRadianos := false;
+  if RadioButton2.Checked then GrausRadianos := true;
   for i := 1 to calc.length + 1 do
   begin
        if(IsNumber(calc[i]) or isOperator(calc[i]) or (calc[i] = '.')) and (flagReading = false) then
@@ -521,8 +709,8 @@ begin
                 operador := OperatorClass(P1.Peek());
                 if(operadorAtual.value = '(') then
                 begin
+                  P1.Push(operadorAtual);
                   continue;
-
                 end;
                 if(operador.precedencia >= operadorAtual.precedencia) then
                 begin
@@ -564,20 +752,39 @@ begin
       number := '';
       continue;
     end;
-    if(IsOperator(c)) then
+    if(IsOperator(c) or (c = 'r') or (c = 'q') or (c = 's') or (c = 'c') or (c = 't') or (c = 'i') or (c = 'o') or (c = 'a') or (c = 'q') or (c = 'r') or (c = 'l') or (c = 'n')) then
     begin
-      debugNumber := NumberClass(P2.Peek());
       firstObject := NumberClass(P2.Pop()).value;
-      secondObject := NumberClass(P2.Pop()).value;
+      if(c = '+') or (c = '-') or (c = '*') or (c = '/') or (c = 'r') or (c = '^') then
+      begin
+        secondObject := NumberClass(P2.Pop()).value;
+      end;
       case (c) of
          '+': P2.Push(NumberClass.create(soma(firstObject, secondObject)));
          '-': P2.Push(NumberClass.create(subtracao(secondObject, firstObject)));
+         '/': P2.Push(NumberClass.create(divisao(secondObject, firstObject)));
+         '*': P2.Push(NumberClass.create(multiplicacao(firstObject, secondObject)));
+         '^': P2.Push(NumberClass.create(potencia(firstObject, secondObject)));
+         'r': P2.Push(NumberClass.create(raiz(firstObject, secondObject)));
+         'q': P2.Push(NumberClass.create(raiz('2', secondObject)));
+         's': P2.Push(NumberClass.create(sen(firstObject)));
+         'c': P2.Push(NumberClass.create(cos(firstObject)));
+         't': P2.Push(NumberClass.create(tg(firstObject)));
+         'i': P2.Push(NumberClass.create(arcsen(firstObject)));
+         'o': P2.Push(NumberClass.create(arccos(firstObject)));
+         'a': P2.Push(NumberClass.create(arctg(firstObject)));
+         'l': P2.Push(NumberClass.create(log(firstObject)));
+         'n': P2.Push(NumberClass.create(ln(firstObject)));
+         '!': P2.Push(NumberClass.create(fatorial(firstObject)));
+
       end;
+      debugNumber := NumberClass(P2.Peek());
       continue;
     end;
     number := number + c;
   end;
-  Edit2.Text := NumberClass(P2.Peek()).value;
+
+  Edit2.Text := debugNumber.value;
 end;
 
 
