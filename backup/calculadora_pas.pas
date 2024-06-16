@@ -98,7 +98,7 @@ begin
    begin
        precedencia := 5
    end;
-   if(v = '/') or (v = '*') then
+   if(v = '/') or (v = '*') or (v = '!') then
    begin
        precedencia := 4
    end;
@@ -110,7 +110,7 @@ begin
    begin
        precedencia := 0
    end;
-   if((v = 's') or (v = 'c') or (v = 't') or (v = 'i') or (v = 'o') ) then
+   if((v = 's') or (v = 'c') or (v = 't') or (v = 'i') or (v = 'o') or (v = 'l') or (v = 'q') or (v = 'a')) then
    begin
        precedencia := 7
    end;
@@ -684,6 +684,26 @@ begin
   RemoveExtraSpaces := newStr;
 end;
 
+function ReplacePiInString(const Input: string): string;
+const
+  PiString = '3.141592653589793';
+var
+  Output: string;
+  Position: Integer;
+begin
+  Output := Input;
+  Position := Pos('pi', Output);
+
+  while Position <> 0 do
+  begin
+    Delete(Output, Position, 2);
+    Insert(PiString, Output, Position);
+    Position := Pos('pi', Output);
+  end;
+
+  Result := Output;
+end;
+
 procedure TForm1.ButtonEqualClick(Sender: TObject);
 var
    calc: String;
@@ -706,7 +726,7 @@ var
    booleanTest: boolean;
    booleanTest1: boolean;
 begin
-  calc := Edit1.Text;
+  calc := ReplacePiInString(Edit1.Text);
   L1 := '';
   number := '';
   cleanCalc := '';
@@ -816,7 +836,7 @@ begin
     c := L1[i];
     booleanTest := (number <> ' ') and (number <> '');
     booleanTest1 := c = ' ';
-    if (number <> ' ') and (c = ' ') then
+    if booleanTest and booleanTest1 then
     begin
       numberOperator := NumberClass.create(number);
       P2.Push(numberOperator);
@@ -835,9 +855,9 @@ begin
          '-': P2.Push(NumberClass.create(subtracao(secondObject, firstObject)));
          '/': P2.Push(NumberClass.create(divisao(secondObject, firstObject)));
          '*': P2.Push(NumberClass.create(multiplicacao(firstObject, secondObject)));
-         '^': P2.Push(NumberClass.create(potencia(firstObject, secondObject)));
+         '^': P2.Push(NumberClass.create(potencia(secondObject, firstObject)));
          'r': P2.Push(NumberClass.create(raiz(firstObject, secondObject)));
-         'q': P2.Push(NumberClass.create(raiz('2', secondObject)));
+         'q': P2.Push(NumberClass.create(raiz('2', firstObject)));
          's': P2.Push(NumberClass.create(sen(firstObject)));
          'c': P2.Push(NumberClass.create(cos(firstObject)));
          't': P2.Push(NumberClass.create(tg(firstObject)));
@@ -851,6 +871,9 @@ begin
 
       end;
       debugNumber := NumberClass(P2.Peek());
+      continue;
+    end;
+    if(c = ' ') then begin
       continue;
     end;
     number := number + c;

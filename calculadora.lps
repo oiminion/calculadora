@@ -12,7 +12,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="61"/>
+        <UsageCount Value="64"/>
       </Unit>
       <Unit>
         <Filename Value="calculadora_pas.pas"/>
@@ -21,10 +21,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="828"/>
-        <CursorPos Y="841"/>
+        <TopLine Value="841"/>
+        <CursorPos Y="852"/>
         <ComponentState Value="2"/>
-        <UsageCount Value="61"/>
+        <UsageCount Value="64"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -48,129 +48,129 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="430"/>
         <CursorPos Y="323"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="819" TopLine="807"/>
+        <Caret Line="846" TopLine="839"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="826" TopLine="817"/>
+        <Caret Line="848" TopLine="839"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="816" TopLine="807"/>
+        <Caret Line="849" TopLine="839"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="817" TopLine="807"/>
+        <Caret Line="851" TopLine="839"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="818" TopLine="807"/>
+        <Caret Line="857" TopLine="850"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="819" TopLine="807"/>
+        <Caret Line="873" TopLine="866"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="826" TopLine="817"/>
+        <Caret Line="874" TopLine="866"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="828" TopLine="817"/>
+        <Caret Line="836" TopLine="829"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="829" TopLine="817"/>
+        <Caret Line="837" TopLine="829"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="842" TopLine="833"/>
+        <Caret Line="838" TopLine="829"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="853" TopLine="844"/>
+        <Caret Line="839" TopLine="829"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="854" TopLine="844"/>
+        <Caret Line="846" TopLine="839"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="816" TopLine="807"/>
+        <Caret Line="836" TopLine="829"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="817" TopLine="807"/>
+        <Caret Line="837" TopLine="829"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="818" TopLine="807"/>
+        <Caret Line="838" TopLine="829"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="819" TopLine="807"/>
+        <Caret Line="839" TopLine="829"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="826" TopLine="817"/>
+        <Caret Line="846" TopLine="839"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="816" TopLine="807"/>
+        <Caret Line="848" TopLine="839"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="817" TopLine="807"/>
+        <Caret Line="849" TopLine="839"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="818" TopLine="807"/>
+        <Caret Line="851" TopLine="839"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="819" TopLine="807"/>
+        <Caret Line="873" TopLine="866"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="826" TopLine="817"/>
+        <Caret Line="874" TopLine="866"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="828" TopLine="817"/>
+        <Caret Line="836" TopLine="829"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="829" TopLine="817"/>
+        <Caret Line="837" TopLine="829"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="853" TopLine="844"/>
+        <Caret Line="838" TopLine="829"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="854" TopLine="844"/>
+        <Caret Line="839" TopLine="829"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="816" TopLine="807"/>
+        <Caret Line="846" TopLine="839"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="817" TopLine="807"/>
+        <Caret Line="879" TopLine="872"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="818" TopLine="807"/>
+        <Caret Line="834" TopLine="829"/>
       </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="819" TopLine="807"/>
+        <Caret Line="837" TopLine="829"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -187,6 +187,20 @@
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="calculadora_pas.pas"/>
+        <Line Value="841"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="calculadora_pas.pas"/>
+        <Line Value="843"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="calculadora_pas.pas"/>
         <Line Value="842"/>
       </Item>
       <Item>
@@ -194,101 +208,125 @@
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="calculadora_pas.pas"/>
-        <Line Value="853"/>
+        <Line Value="844"/>
       </Item>
       <Item>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="calculadora_pas.pas"/>
-        <Line Value="854"/>
+        <Line Value="847"/>
       </Item>
       <Item>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="calculadora_pas.pas"/>
-        <Line Value="818"/>
+        <Line Value="845"/>
       </Item>
       <Item>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="calculadora_pas.pas"/>
-        <Line Value="816"/>
+        <Line Value="846"/>
       </Item>
       <Item>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="calculadora_pas.pas"/>
-        <Line Value="821"/>
+        <Line Value="848"/>
       </Item>
       <Item>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="calculadora_pas.pas"/>
-        <Line Value="822"/>
+        <Line Value="849"/>
       </Item>
       <Item>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="calculadora_pas.pas"/>
-        <Line Value="823"/>
+        <Line Value="850"/>
       </Item>
       <Item>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="calculadora_pas.pas"/>
-        <Line Value="826"/>
+        <Line Value="851"/>
       </Item>
       <Item>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="calculadora_pas.pas"/>
-        <Line Value="828"/>
+        <Line Value="872"/>
       </Item>
       <Item>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="calculadora_pas.pas"/>
-        <Line Value="829"/>
+        <Line Value="873"/>
       </Item>
       <Item>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="calculadora_pas.pas"/>
-        <Line Value="817"/>
+        <Line Value="874"/>
       </Item>
       <Item>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="calculadora_pas.pas"/>
-        <Line Value="818"/>
+        <Line Value="875"/>
       </Item>
       <Item>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="calculadora_pas.pas"/>
-        <Line Value="819"/>
+        <Line Value="879"/>
       </Item>
       <Item>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="calculadora_pas.pas"/>
-        <Line Value="841"/>
+        <Line Value="858"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="calculadora_pas.pas"/>
+        <Line Value="855"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="calculadora_pas.pas"/>
+        <Line Value="857"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="calculadora_pas.pas"/>
+        <Line Value="852"/>
       </Item>
     </BreakPoints>
     <Watches>
+      <Item>
+        <Expression Value="c"/>
+      </Item>
       <Item>
         <Expression Value="booleanTest"/>
       </Item>
@@ -296,13 +334,10 @@
         <Expression Value="booleanTest1"/>
       </Item>
       <Item>
-        <Expression Value="c"/>
-      </Item>
-      <Item>
         <Expression Value="number"/>
       </Item>
       <Item>
-        <Expression Value="debugClass"/>
+        <Expression Value="debugNumber"/>
       </Item>
       <Item>
         <Expression Value="firstObject"/>
