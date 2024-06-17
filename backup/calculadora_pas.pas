@@ -1,3 +1,4 @@
+//Feito por Arthur Koichi Nakao e Paulo Sergio Campos de Lima
 unit calculadora_pas;
 
 {$mode objfpc}{$H+}
@@ -43,9 +44,6 @@ type
     Button4: TButton;
     CheckBox1: TCheckBox;
     Edit1: TEdit;
-    Edit2: TEdit;
-    Edit3: TEdit;
-    Edit4: TEdit;
     Panel1: TPanel;
     RadioButton1: TRadioButton;
     RadioButton2: TRadioButton;
@@ -704,6 +702,26 @@ begin
   Result := Output;
 end;
 
+function ReplaceEInString(const Input: string): string;
+const
+  PiString = '2.718281828459045';
+var
+  Output: string;
+  Position: Integer;
+begin
+  Output := Input;
+  Position := Pos('e', Output);
+
+  while Position <> 0 do
+  begin
+    Delete(Output, Position, 2);
+    Insert(PiString, Output, Position);
+    Position := Pos('e', Output);
+  end;
+
+  Result := Output;
+end;
+
 procedure TForm1.ButtonEqualClick(Sender: TObject);
 var
    calc: String;
@@ -772,7 +790,6 @@ begin
        end;
   end;
   calc := cleanCalc;
-  Edit3.Text := calc;
   for i := 1 to calc.length + 1 do
   begin
     c := calc[i];
@@ -829,7 +846,6 @@ begin
 
   L1 := RemoveExtraSpaces(L1);
   Delete(L1,1,1);
-  Edit4.Text := L1;
   number := '';
   for i := 1 to L1.length + 1 do
   begin
@@ -878,8 +894,8 @@ begin
     end;
     number := number + c;
   end;
+  Edit1.Text := NumberClass(P2.Peek()).value;
 
-  Edit2.Text := debugNumber.value;
 end;
 
 
