@@ -1,3 +1,4 @@
+//Feito por Arthur Koichi Nakao e Paulo Sergio Campos de Lima
 unit calculadora_pas;
 
 {$mode objfpc}{$H+}
