@@ -21,9 +21,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="922"/>
-        <CursorPos X="31" Y="922"/>
-        <ComponentState Value="2"/>
+        <TopLine Value="136"/>
+        <CursorPos X="31" Y="165"/>
         <UsageCount Value="65"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -52,14 +51,6 @@
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="8" Column="19"/>
-      </Position>
-      <Position>
-        <Filename Value="calculadora_pas.pas"/>
-        <Caret Line="879" TopLine="867"/>
-      </Position>
       <Position>
         <Filename Value="calculadora_pas.pas"/>
         <Caret Line="772" Column="21" TopLine="766"/>
@@ -171,6 +162,14 @@
       <Position>
         <Filename Value="calculadora_pas.pas"/>
         <Caret Line="191" Column="22" TopLine="177"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora_pas.pas"/>
+        <Caret Line="163" Column="31" TopLine="134"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora_pas.pas"/>
+        <Caret Line="164" Column="31" TopLine="135"/>
       </Position>
     </JumpHistory>
     <RunParams>

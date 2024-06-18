@@ -1,14 +1,14 @@
 object Form1: TForm1
-  Left = 319
+  Left = 538
   Height = 694
-  Top = 100
-  Width = 1322
+  Top = 109
+  Width = 488
   Caption = 'Form1'
   ClientHeight = 694
-  ClientWidth = 1322
+  ClientWidth = 488
   LCLVersion = '3.4.0.0'
   object Button0: TButton
-    Left = 0
+    Left = 16
     Height = 28
     Top = 212
     Width = 32
@@ -18,7 +18,7 @@ object Form1: TForm1
   end
   object ButtonSign: TButton
     Tag = 10
-    Left = 38
+    Left = 54
     Height = 28
     Top = 212
     Width = 32
@@ -28,7 +28,7 @@ object Form1: TForm1
   end
   object ButtonMinus: TButton
     Tag = 11
-    Left = 76
+    Left = 92
     Height = 28
     Top = 212
     Width = 32
@@ -38,7 +38,7 @@ object Form1: TForm1
   end
   object ButtonPlus: TButton
     Tag = 12
-    Left = 114
+    Left = 130
     Height = 28
     Top = 212
     Width = 32
@@ -47,8 +47,8 @@ object Form1: TForm1
     OnClick = Button0Click
   end
   object ButtonDav: TButton
-    Tag = 16
-    Left = 114
+    Tag = 17
+    Left = 130
     Height = 28
     Top = 79
     Width = 32
@@ -57,8 +57,8 @@ object Form1: TForm1
     OnClick = Button0Click
   end
   object ButtonFac: TButton
-    Tag = 17
-    Left = 76
+    Tag = 16
+    Left = 92
     Height = 28
     Top = 79
     Width = 32
@@ -68,7 +68,7 @@ object Form1: TForm1
   end
   object ButtonLog: TButton
     Tag = 18
-    Left = 38
+    Left = 54
     Height = 28
     Top = 79
     Width = 32
@@ -78,7 +78,7 @@ object Form1: TForm1
   end
   object ButtonLn: TButton
     Tag = 19
-    Left = 0
+    Left = 16
     Height = 28
     Top = 79
     Width = 32
@@ -88,7 +88,7 @@ object Form1: TForm1
   end
   object ButtonDiv: TButton
     Tag = 15
-    Left = 114
+    Left = 130
     Height = 28
     Top = 112
     Width = 32
@@ -98,7 +98,7 @@ object Form1: TForm1
   end
   object Button9: TButton
     Tag = 9
-    Left = 76
+    Left = 92
     Height = 28
     Top = 112
     Width = 32
@@ -108,7 +108,7 @@ object Form1: TForm1
   end
   object Button8: TButton
     Tag = 8
-    Left = 38
+    Left = 54
     Height = 28
     Top = 112
     Width = 32
@@ -118,7 +118,7 @@ object Form1: TForm1
   end
   object Button7: TButton
     Tag = 7
-    Left = 0
+    Left = 16
     Height = 28
     Top = 112
     Width = 32
@@ -128,7 +128,7 @@ object Form1: TForm1
   end
   object ButtonMult: TButton
     Tag = 14
-    Left = 114
+    Left = 130
     Height = 28
     Top = 146
     Width = 32
@@ -138,7 +138,7 @@ object Form1: TForm1
   end
   object Button6: TButton
     Tag = 6
-    Left = 76
+    Left = 92
     Height = 28
     Top = 146
     Width = 32
@@ -148,7 +148,7 @@ object Form1: TForm1
   end
   object Button5: TButton
     Tag = 5
-    Left = 38
+    Left = 54
     Height = 28
     Top = 146
     Width = 32
@@ -158,7 +158,7 @@ object Form1: TForm1
   end
   object Button4: TButton
     Tag = 4
-    Left = 0
+    Left = 16
     Height = 28
     Top = 146
     Width = 32
@@ -168,7 +168,7 @@ object Form1: TForm1
   end
   object ButtonPoint: TButton
     Tag = 13
-    Left = 114
+    Left = 130
     Height = 28
     Top = 179
     Width = 32
@@ -178,7 +178,7 @@ object Form1: TForm1
   end
   object Button3: TButton
     Tag = 3
-    Left = 76
+    Left = 92
     Height = 28
     Top = 179
     Width = 32
@@ -188,7 +188,7 @@ object Form1: TForm1
   end
   object Button2: TButton
     Tag = 2
-    Left = 38
+    Left = 54
     Height = 28
     Top = 179
     Width = 32
@@ -198,7 +198,7 @@ object Form1: TForm1
   end
   object Button1: TButton
     Tag = 1
-    Left = 0
+    Left = 16
     Height = 28
     Top = 179
     Width = 32
@@ -208,7 +208,7 @@ object Form1: TForm1
   end
   object ButtonSin: TButton
     Tag = 24
-    Left = 192
+    Left = 176
     Height = 28
     Top = 80
     Width = 32
@@ -218,7 +218,7 @@ object Form1: TForm1
   end
   object ButtonCos: TButton
     Tag = 23
-    Left = 192
+    Left = 176
     Height = 28
     Top = 113
     Width = 32
@@ -228,7 +228,7 @@ object Form1: TForm1
   end
   object ButtonTan: TButton
     Tag = 22
-    Left = 192
+    Left = 176
     Height = 28
     Top = 147
     Width = 32
@@ -238,29 +238,29 @@ object Form1: TForm1
   end
   object ButtonRoot: TButton
     Tag = 21
-    Left = 192
+    Left = 264
     Height = 28
-    Top = 180
-    Width = 32
+    Top = 112
+    Width = 72
     Caption = 'yroot(x)'
     TabOrder = 23
     OnClick = Button0Click
   end
   object ButtonEqual: TButton
     Tag = 20
-    Left = 192
+    Left = 176
     Height = 28
     Top = 212
-    Width = 32
+    Width = 160
     Caption = '='
     TabOrder = 24
     OnClick = ButtonEqualClick
   end
   object ButtonE: TButton
     Tag = 25
-    Left = 248
+    Left = 224
     Height = 28
-    Top = 80
+    Top = 145
     Width = 32
     Caption = 'e^x'
     TabOrder = 25
@@ -268,9 +268,9 @@ object Form1: TForm1
   end
   object ButtonSquareVar: TButton
     Tag = 26
-    Left = 248
+    Left = 224
     Height = 28
-    Top = 113
+    Top = 112
     Width = 32
     Caption = 'x^y'
     TabOrder = 26
@@ -278,9 +278,9 @@ object Form1: TForm1
   end
   object ButtonSquare: TButton
     Tag = 27
-    Left = 248
+    Left = 264
     Height = 28
-    Top = 147
+    Top = 145
     Width = 32
     Caption = 'x^2'
     TabOrder = 27
@@ -288,35 +288,35 @@ object Form1: TForm1
   end
   object ButtonInvSquare: TButton
     Tag = 28
-    Left = 248
+    Left = 304
     Height = 28
-    Top = 180
+    Top = 145
     Width = 32
-    Caption = 'x^1/2'
+    Caption = '√'
     TabOrder = 28
     OnClick = Button0Click
   end
   object Panel1: TPanel
-    Left = 144
+    Left = 16
     Height = 26
     Top = 48
-    Width = 170
+    Width = 154
     ClientHeight = 26
-    ClientWidth = 170
+    ClientWidth = 154
     TabOrder = 29
     object RadioButton2: TRadioButton
-      Left = 104
-      Height = 23
+      Left = 80
+      Height = 19
       Top = 0
-      Width = 76
+      Width = 66
       Caption = 'Radianos'
       TabOrder = 0
     end
     object RadioButton1: TRadioButton
       Left = 8
-      Height = 23
+      Height = 19
       Top = 0
-      Width = 58
+      Width = 48
       Caption = 'Graus'
       Checked = True
       TabOrder = 1
@@ -324,25 +324,25 @@ object Form1: TForm1
     end
   end
   object CheckBox1: TCheckBox
-    Left = 0
-    Height = 23
-    Top = 48
-    Width = 42
+    Left = 176
+    Height = 19
+    Top = 52
+    Width = 34
     Caption = 'Inv'
     TabOrder = 30
   end
   object Edit1: TEdit
     Left = 16
-    Height = 25
+    Height = 23
     Top = 16
-    Width = 280
+    Width = 320
     TabOrder = 31
   end
   object ButtonPi: TButton
     Tag = 31
-    Left = 248
+    Left = 176
     Height = 28
-    Top = 212
+    Top = 179
     Width = 32
     Caption = 'Pi'
     TabOrder = 32
@@ -350,30 +350,50 @@ object Form1: TForm1
   end
   object ButtonTrueE: TButton
     Tag = 271
-    Left = 152
+    Left = 224
     Height = 28
-    Top = 79
+    Top = 179
     Width = 32
     Caption = 'e'
     TabOrder = 33
     OnClick = Button0Click
   end
   object ButtonClear: TButton
-    Left = 48
+    Left = 224
     Height = 25
-    Top = 46
-    Width = 75
+    Top = 49
+    Width = 112
     Caption = 'Clear'
     TabOrder = 34
     OnClick = ButtonClearClick
   end
   object Button10: TButton
-    Left = 192
+    Left = 224
     Height = 25
-    Top = 248
-    Width = 88
-    Caption = 'Backsspace'
+    Top = 83
+    Width = 112
+    Caption = 'Backspace'
     TabOrder = 35
     OnClick = Button10Click
+  end
+  object ButtonSquare1: TButton
+    Tag = 29
+    Left = 264
+    Height = 28
+    Top = 179
+    Width = 32
+    Caption = '('
+    TabOrder = 36
+    OnClick = Button0Click
+  end
+  object ButtonSquare2: TButton
+    Tag = 30
+    Left = 304
+    Height = 28
+    Top = 179
+    Width = 32
+    Caption = ')'
+    TabOrder = 37
+    OnClick = Button0Click
   end
 end

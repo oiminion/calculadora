@@ -19,6 +19,8 @@ type
     Button5: TButton;
     Button6: TButton;
     ButtonPi: TButton;
+    ButtonSquare1: TButton;
+    ButtonSquare2: TButton;
     ButtonTrueE: TButton;
     ButtonMult: TButton;
     Button7: TButton;
@@ -149,14 +151,18 @@ begin
        13: falseValue := '.';
        14: falseValue := '*';
        15: falseValue := '/';
-       19: falseValue := 'ln(';
-       18: falseValue := 'log(';
+       16: falseValue := '!';
        17: falseValue := '^-1';
-       21: falseValue := 'sqr(';
+       18: falseValue := 'log(';
+       19: falseValue := 'ln(';
+       21: falseValue := 'root(';
+
        25: falseValue := 'e^';
        26: falseValue := '^';
        27: falseValue := '^2';
-       28: falseValue := 'x^';
+       28: falseValue := 'sqr(';
+       29: falseValue := '(';
+       30: falseValue := ')';
   end;
   if(CheckBox1.Checked) then
   begin
