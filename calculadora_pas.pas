@@ -201,7 +201,7 @@ begin
      x := StrToFloat(a);
      y := StrToFloat(b);
      r := 0;
-   {$ASMODE intel}
+   {$ASMMODE intel}
    asm
       finit
       fld y
@@ -223,11 +223,11 @@ begin
      x := StrToFloat(a);
      y := StrToFloat(b);
      r := 0;
-   {$ASMODE intel}
+   {$ASMMODE intel}
    asm
       finit
-      fld y
       fld x
+      fld y
       fsub
       fst r
    end;
@@ -245,7 +245,7 @@ begin
      x := StrToFloat(a);
      y := StrToFloat(b);
      r := 0;
-   {$ASMODE intel}
+   {$ASMMODE intel}
    asm
       finit
       fld y
@@ -267,11 +267,11 @@ begin
      x := StrToFloat(a);
      y := StrToFloat(b);
      r := 0;
-   {$ASMODE intel}
+   {$ASMMODE intel}
    asm
       finit
-      fld y
       fld x
+      fld y
       fdiv
       fst r
    end;
@@ -289,14 +289,14 @@ begin
      x := StrToFloat(a);
      d := 10;
      r := 0;
-   {$ASMODE intel}
+   {$ASMMODE intel}
    asm
       finit
       fld1
       fld d
       fyl2x
       fld1
-      fdiv
+      fdivr
       fld x
       fyl2x
       fst r
@@ -305,7 +305,7 @@ begin
    log := t;
 end;
 
- function ln(a:string):string;
+function ln(a:string):string;
 var
   x :double;
   d :double;
@@ -316,14 +316,14 @@ begin
      x := StrToFloat(a);
      q := e;
      r := 0;
-   {$ASMODE intel}
+   {$ASMMODE intel}
    asm
       finit
       fld1
       fld q
       fyl2x
       fld1
-      fdiv
+      fdivr
       fld x
       fyl2x
       fst r
@@ -342,7 +342,7 @@ begin
      x := StrToFloat(a);
      y := StrToFloat(b);
      r := 0;
-   {$asmode intel}
+   {$ASMMODE intel}
    asm
       finit
       fld y
@@ -350,13 +350,13 @@ begin
       fld x
       fyl2x
       fmul
-      fld %st
+      fld st
       fld1
       fxch
       fprem
       fxch
       fstp r
-      fsubr %st,%st(1)
+      fsub st(1),st
       f2xm1
       fld1
       fadd
@@ -376,7 +376,7 @@ var
 begin
      x := StrToFloat(a);
      r := 0;
-   {$ASMODE intel}
+   {$ASMMODE intel}
    asm
       fld x
       fsqrt
@@ -396,20 +396,23 @@ begin
      x := StrToFloat(b);
      y := StrToFloat(a);
      r := 0;
-   {$asmode intel}
+   {$ASMMODE intel}
    asm
       finit
-      fld y
       fld1
+      fld y
       fdiv
       fld1
       fld x
       fyl2x
       fmul
-      fld %st
-      frndint
-      fsubr %st,%st(1)
+      fld st
+      fld1
       fxch
+      fprem
+      fxch
+      fstp r
+      fsub st(1),st
       f2xm1
       fld1
       fadd
@@ -432,7 +435,7 @@ begin
        x := x * (p/ 180);
      end;
      r := 0;
-   {$asmode intel}
+   {$ASMMODE intel}
    asm
       finit
       fld x
@@ -455,7 +458,7 @@ begin
        x := x * (p/ 180);
      end;
      r := 0;
-   {$asmode intel}
+   {$ASMMODE intel}
    asm
       finit
       fld x
@@ -478,7 +481,7 @@ begin
        x := x * (p/ 180);
      end;
      r := 0;
-   {$asmode intel}
+   {$ASMMODE intel}
    asm
       finit
       fld x
@@ -495,16 +498,32 @@ function arcsen(a:string):string;
 var
    x:double;
     r:double;
+    v:double;
     t:string;
 begin
    x := StrToFloat(a);
+   v := 0.00000000001;
      r := 0;
-   {$asmode intel}
+   {$ASMMODE intel}
    asm
       finit
       fld x
+
       fld1
-      fsub
+      fcom
+      fstsw ax
+      sahf
+      je @max
+
+      fchs
+      fcom
+      fstsw ax
+      sahf
+      je @min
+
+      @ini:
+      fld1
+      fsubr
       fld1
       fld x
       fadd
@@ -514,6 +533,20 @@ begin
       fxch
       fpatan
       fst r
+      jmp @fim
+      @max:
+      fstp r
+      fld v
+      fsub
+      fst x
+      jmp @ini
+      @min:
+      fstp r
+      fld v
+      fadd
+      fst x
+      jmp @ini
+      @fim:
    end;
    if(GrausRadianos = false) then
      begin
@@ -531,7 +564,7 @@ var
 begin
    x := StrToFloat(a);
      r := 0;
-   {$asmode intel}
+   {$ASMMODE intel}
    asm
       finit
       fld x
