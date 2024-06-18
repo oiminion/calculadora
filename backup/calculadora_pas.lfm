@@ -240,7 +240,7 @@ object Form1: TForm1
     Tag = 21
     Left = 264
     Height = 28
-    Top = 80
+    Top = 112
     Width = 72
     Caption = 'yroot(x)'
     TabOrder = 23
@@ -248,10 +248,10 @@ object Form1: TForm1
   end
   object ButtonEqual: TButton
     Tag = 20
-    Left = 224
+    Left = 176
     Height = 28
-    Top = 179
-    Width = 32
+    Top = 212
+    Width = 160
     Caption = '='
     TabOrder = 24
     OnClick = ButtonEqualClick
@@ -260,7 +260,7 @@ object Form1: TForm1
     Tag = 25
     Left = 224
     Height = 28
-    Top = 113
+    Top = 145
     Width = 32
     Caption = 'e^x'
     TabOrder = 25
@@ -270,7 +270,7 @@ object Form1: TForm1
     Tag = 26
     Left = 224
     Height = 28
-    Top = 80
+    Top = 112
     Width = 32
     Caption = 'x^y'
     TabOrder = 26
@@ -280,7 +280,7 @@ object Form1: TForm1
     Tag = 27
     Left = 264
     Height = 28
-    Top = 113
+    Top = 145
     Width = 32
     Caption = 'x^2'
     TabOrder = 27
@@ -290,7 +290,7 @@ object Form1: TForm1
     Tag = 28
     Left = 304
     Height = 28
-    Top = 113
+    Top = 145
     Width = 32
     Caption = '√'
     TabOrder = 28
@@ -352,7 +352,7 @@ object Form1: TForm1
     Tag = 271
     Left = 224
     Height = 28
-    Top = 147
+    Top = 179
     Width = 32
     Caption = 'e'
     TabOrder = 33
@@ -368,10 +368,10 @@ object Form1: TForm1
     OnClick = ButtonClearClick
   end
   object Button10: TButton
-    Left = 176
+    Left = 224
     Height = 25
-    Top = 212
-    Width = 80
+    Top = 83
+    Width = 112
     Caption = 'Backspace'
     TabOrder = 35
     OnClick = Button10Click
@@ -380,17 +380,17 @@ object Form1: TForm1
     Tag = 29
     Left = 264
     Height = 28
-    Top = 147
+    Top = 179
     Width = 32
     Caption = '('
     TabOrder = 36
     OnClick = Button0Click
   end
   object ButtonSquare2: TButton
-    Tag = 27
+    Tag = 30
     Left = 304
     Height = 28
-    Top = 147
+    Top = 179
     Width = 32
     Caption = ')'
     TabOrder = 37

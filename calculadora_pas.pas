@@ -148,7 +148,7 @@ begin
        10: falseValue := '~';
        11: falseValue := '-';
        12: falseValue := '+';
-       13: falseValue := '.';
+       13: falseValue := ',';//marca
        14: falseValue := '*';
        15: falseValue := '/';
        16: falseValue := '!';
@@ -704,7 +704,7 @@ end;
 
 function ReplacePiInString(const Input: string): string;
 const
-  PiString = '3.141592653589793';
+  PiString = '3,141592653589793'; //marca
 var
   Output: string;
   Position: Integer;
@@ -724,7 +724,7 @@ end;
 
 function ReplaceEInString(const Input: string): string;
 const
-  PiString = '2.718281828459045';
+  PiString = '2,718281828459045';//marca
 var
   Output: string;
   Position: Integer;
@@ -778,8 +778,8 @@ begin
   if RadioButton2.Checked then GrausRadianos := true;
   for i := 1 to calc.length + 1 do
   begin
-       if(IsNumber(calc[i]) or isOperator(calc[i]) or (calc[i] = '.')) and (flagReading = false) then
-       begin
+       if(IsNumber(calc[i]) or isOperator(calc[i]) or (calc[i] = ',')) and (flagReading = false) then
+       begin//marca
             cleanCalc := cleanCalc + calc[i];
        end;
        if(calc[i] = '(') then
@@ -814,8 +814,8 @@ begin
   for i := 1 to calc.length + 1 do
   begin
     c := calc[i];
-    if((IsNumber(c) = false) and (c <> '.')) or (i = calc.length + 1) then
-    begin
+    if((IsNumber(c) = false) and (c <> ',')) or (i = calc.length + 1) then
+    begin //marca
       L1 := L1 + ' ' + number;
       number := '';
       if(c = '+') or (c = '-') or (c = '*') or (c = '/') or (c = '^') or (c = '~') or (c = '(') or (c = ')') or (c = 's') or (c = 'c') or (c = 't') or (c = 'i') or (c = 'o') or (c = 'a') or (c = 'q') or (c = 'r') or (c = 'l') or (c = 'n') then

@@ -148,7 +148,7 @@ begin
        10: falseValue := '~';
        11: falseValue := '-';
        12: falseValue := '+';
-       13: falseValue := '.';
+       13: falseValue := '.';//marca
        14: falseValue := '*';
        15: falseValue := '/';
        16: falseValue := '!';
