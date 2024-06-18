@@ -318,7 +318,9 @@ object Form1: TForm1
       Top = 0
       Width = 58
       Caption = 'Graus'
+      Checked = True
       TabOrder = 1
+      TabStop = True
     end
   end
   object CheckBox1: TCheckBox
@@ -355,5 +357,23 @@ object Form1: TForm1
     Caption = 'e'
     TabOrder = 33
     OnClick = Button0Click
+  end
+  object ButtonClear: TButton
+    Left = 48
+    Height = 25
+    Top = 46
+    Width = 75
+    Caption = 'Clear'
+    TabOrder = 34
+    OnClick = ButtonClearClick
+  end
+  object Button10: TButton
+    Left = 192
+    Height = 25
+    Top = 248
+    Width = 88
+    Caption = 'Backsspace'
+    TabOrder = 35
+    OnClick = Button10Click
   end
 end

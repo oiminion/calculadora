@@ -14,6 +14,8 @@ type
 
   TForm1 = class(TForm)
     Button0: TButton;
+    Button10: TButton;
+    ButtonClear: TButton;
     Button5: TButton;
     Button6: TButton;
     ButtonPi: TButton;
@@ -49,8 +51,10 @@ type
     Panel1: TPanel;
     RadioButton1: TRadioButton;
     RadioButton2: TRadioButton;
+    procedure Button10Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure Button0Click(Sender: TObject);
+    procedure ButtonClearClick(Sender: TObject);
     procedure ButtonEqualClick(Sender: TObject);
     procedure ButtonSinClick(Sender: TObject);
     procedure ButtonSquareClick(Sender: TObject);
@@ -174,6 +178,11 @@ begin
     falseValue := TheButton.Tag.toString();
   end;
   Edit1.Text:= Edit1.Text + falseValue;
+end;
+
+procedure TForm1.ButtonClearClick(Sender: TObject);
+begin
+  Edit1.Text := '';
 end;
 
 function soma(a,b:string):string;
@@ -900,7 +909,7 @@ begin
     end;
     number := number + c;
   end;
-  Edit1.Text := calc;
+  Edit1.Text := NumberClass(P2.Peek()).value;
 
 end;
 
@@ -917,6 +926,12 @@ end;
 
 procedure TForm1.Button9Click(Sender: TObject);
 begin
+
+end;
+
+procedure TForm1.Button10Click(Sender: TObject);
+begin
+  Edit1.Text := Copy (Edit1.Text,0,(length(Edit1.text)-1));
 
 end;
 
