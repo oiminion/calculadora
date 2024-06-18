@@ -16,6 +16,8 @@ type
     Button0: TButton;
     Button5: TButton;
     Button6: TButton;
+    ButtonPi: TButton;
+    ButtonTrueE: TButton;
     ButtonMult: TButton;
     Button7: TButton;
     Button8: TButton;
@@ -35,7 +37,7 @@ type
     ButtonSquareVar: TButton;
     ButtonSquare: TButton;
     ButtonInvSquare: TButton;
-    ButtonComma: TButton;
+    ButtonMinus: TButton;
     ButtonPlus: TButton;
     Button1: TButton;
     Button2: TButton;
@@ -135,7 +137,10 @@ var
 begin
   TheButton := Sender as Tbutton;
   case (TheButton.Tag) of
-       11: falseValue := ',';
+       271: falseValue := 'e';
+       31: falseValue := 'pi';
+       10: falseValue := '~';
+       11: falseValue := '-';
        12: falseValue := '+';
        13: falseValue := '.';
        14: falseValue := '*';
@@ -714,7 +719,7 @@ begin
 
   while Position <> 0 do
   begin
-    Delete(Output, Position, 2);
+    Delete(Output, Position, 1);
     Insert(PiString, Output, Position);
     Position := Pos('e', Output);
   end;
@@ -745,6 +750,7 @@ var
    booleanTest1: boolean;
 begin
   calc := ReplacePiInString(Edit1.Text);
+  calc := ReplaceEInString(calc);
   L1 := '';
   number := '';
   cleanCalc := '';
@@ -894,7 +900,7 @@ begin
     end;
     number := number + c;
   end;
-  Edit1.Text := NumberClass(P2.Peek()).value;
+  Edit1.Text := calc;
 
 end;
 
